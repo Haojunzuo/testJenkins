@@ -1,0 +1,8 @@
+@echo off
+c:
+cd C:\tools\apache-tomcat-6.0.48\webapps
+if exist "C:\tools\apache-tomcat-6.0.48\webapps\simple-service-webapp.war" del "C:\tools\apache-tomcat-6.0.48\webapps\simple-service-webapp.war"
+copy "C:\Users\it\.jenkins\workspace\simple-service-webapp\target\simple-service-webapp.war" "C:\tools\apache-tomcat-6.0.48\webapps\simple-service-webapp.war"
+if exist "C:\Users\it\.jenkins\workspace\simple-service-webapp\target\simple-service-webapp\"  rd /s /q "C:\Users\it\.jenkins\workspace\simple-service-webapp\target\simple-service-webapp\"
+cd "C:\tools\apache-tomcat-6.0.48\bin\"
+start cmd.exe /c startup.bat
